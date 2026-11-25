@@ -1,5 +1,10 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
+import { useRef, useState } from "react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useReducedMotion,
+} from "motion/react";
 import { ArrowDown, ArrowUpRight, Github } from "lucide-react";
 import { profile } from "../../data";
 import Reveal from "../ui/Reveal";
@@ -7,12 +12,17 @@ import Reveal from "../ui/Reveal";
 export default function Hero() {
   const ref = useRef(null);
   const reduced = useReducedMotion();
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
+
+  const [videoError, setVideoError] = useState(false);
+
   const y = useTransform(scrollYProgress, [0, 1], [0, reduced ? 0 : 150]);
   const rotate = useTransform(scrollYProgress, [0, 1], [-9, reduced ? -9 : 9]);
+
   return (
     <section id="inicio" className="hero section-shell" ref={ref}>
       <div className="hero-grid" aria-hidden="true" />
@@ -68,14 +78,32 @@ export default function Hero() {
       </div>
       <motion.div className="hero-art" style={{ y, rotate }} aria-hidden="true">
         <div className="art-halo" />
-        <img
-          className="orb-image"
-          src="/public/images/data-orbit-rotacao-suave.mp4"
-          alt=""
-          fetchPriority="high"
-          width="1000"
-          height="1000"
-        />
+        {reduced || videoError ? (
+          <img
+            className="orb-image"
+            src="/images/data-orbit.webp"
+            alt=""
+            fetchPriority="high"
+            width={1000}
+            height={1000}
+          />
+        ) : (
+          <video
+            className="orb-image orb-video"
+            src="/videos/data-orbit-rotacao-suave.mp4"
+            poster="/images/data-orbit.webp"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            width={1000}
+            height={1000}
+            aria-hidden="true"
+            tabIndex={-1}
+            onError={() => setVideoError(true)}
+          />
+        )}
         <div className="art-coordinate coordinate-top">
           <span className="tiny-plus">+</span> SYSTEM.DESIGN
           <span>01 / CORE</span>
