@@ -27,7 +27,11 @@ O `index.html` inclui Open Graph e Twitter Card no HTML inicial, com URLs absolu
 Para recriar a arte, edite `scripts/generate-social-preview.mjs` e execute `npm run assets:social`. Depois execute `npm run build` e publique `dist/` na hospedagem. Se o domínio mudar, atualize as URLs no `index.html` e o endereço na arte. Aplicativos de mensagens podem manter a prévia anterior em cache; a apresentação final depende do aplicativo.
 
 - `src/data.js`: nome, e-mail, GitHub, LinkedIn e conteúdo dos projetos. Para habilitar o LinkedIn no rodapé, substitua `null` pela URL completa.
-- `src/App.jsx`: apresentação, tecnologias e processo de trabalho.
+- `src/App.jsx`: composição da página, com as seções na ordem de apresentação.
+- `src/components/layout/`: cabeçalho, navegação e rodapé.
+- `src/components/sections/`: apresentação, sobre, projetos, tecnologias, processo e contato. A seção de projetos controla a seleção e a abertura do modal.
+- `src/components/projects/`: card de projeto e modal de detalhes.
+- `src/components/ui/`: animação de entrada, revelação de palavras e barra de progresso da leitura.
 - `src/styles.css`: paleta, tipografia, responsividade e efeitos.
 - `scripts/generate-assets.mjs`: gera cinco imagens WebP e um GIF animado em `public/images/`, com `npm run assets`. Os arquivos já estão incluídos; não é necessário regenerá-los para executar ou compilar.
 
