@@ -7,8 +7,11 @@ import Stack from "./components/sections/Stack";
 import Process from "./components/sections/Process";
 import Contact from "./components/sections/Contact";
 import ReadingProgress from "./components/ui/ReadingProgress";
+import useInitialHash from "./hooks/useInitialHash";
 
 export default function App() {
+  useInitialHash();
+
   return (
     <>
       <a className="skip-link" href="#conteudo">
@@ -28,3 +31,4 @@ export default function App() {
     </>
   );
 }
+
