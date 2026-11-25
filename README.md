@@ -20,6 +20,12 @@ O resultado de produção é a pasta `dist/`. Pode ser servido por qualquer hosp
 
 ## Personalizar
 
+### Prévia de compartilhamento
+
+O `index.html` inclui Open Graph e Twitter Card no HTML inicial, com URLs absolutas para `https://matheusfrodrigues.vercel.app/`. A imagem `public/images/social-preview.png` tem 1200 × 630 pixels e acompanha a identidade visual do portfólio. O SVG também fica disponível para edição.
+
+Para recriar a arte, edite `scripts/generate-social-preview.mjs` e execute `npm run assets:social`. Depois execute `npm run build` e publique `dist/` na hospedagem. Se o domínio mudar, atualize as URLs no `index.html` e o endereço na arte. Aplicativos de mensagens podem manter a prévia anterior em cache; a apresentação final depende do aplicativo.
+
 - `src/data.js`: nome, e-mail, GitHub, LinkedIn e conteúdo dos projetos. Para habilitar o LinkedIn no rodapé, substitua `null` pela URL completa.
 - `src/App.jsx`: apresentação, tecnologias e processo de trabalho.
 - `src/styles.css`: paleta, tipografia, responsividade e efeitos.

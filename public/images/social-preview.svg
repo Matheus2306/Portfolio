@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs>
+  <radialGradient id="halo"><stop stop-color="#245bff" stop-opacity=".42"/><stop offset="1" stop-color="#08090c" stop-opacity="0"/></radialGradient>
+  <linearGradient id="panel" x2="1" y2="1"><stop stop-color="#182c59"/><stop offset="1" stop-color="#0b1020"/></linearGradient>
+  <linearGradient id="line"><stop stop-color="#3167ff"/><stop offset="1" stop-color="#8dbaff"/></linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#93b6ff" stroke-opacity=".07"/></pattern>
+</defs>
+<rect width="1200" height="630" fill="#08090c"/>
+<ellipse cx="950" cy="290" rx="470" ry="420" fill="url(#halo)"/>
+<rect x="700" width="500" height="630" fill="url(#grid)"/>
+<path d="M56 34H1144" stroke="#283247"/>
+<rect x="56" y="34" width="84" height="3" fill="#5686ff"/>
+<g font-family="Arial, sans-serif">
+  <text x="56" y="92" fill="#f3f5fc" font-size="25" font-weight="700">mr<tspan fill="#5987ff">.</tspan></text>
+  <text x="119" y="90" fill="#a5b2cc" font-size="13" letter-spacing="3">PORTFÓLIO / SOFTWARE DEVELOPER</text>
+  <text x="56" y="199" fill="#81a4ff" font-size="17" letter-spacing="3">BACKEND DEVELOPER · .NET</text>
+  <text x="51" y="279" fill="#f5f7ff" font-size="67" font-weight="700" letter-spacing="-3">Matheus</text>
+  <text x="51" y="352" fill="#f5f7ff" font-size="67" font-weight="700" letter-spacing="-3">Rodrigues<tspan fill="#5686ff">.</tspan></text>
+  <text x="56" y="410" fill="#c3cce0" font-size="25">Ideias fortes. Backend sólido.</text>
+  <g fill="#101827" stroke="#283959"><rect x="56" y="447" width="70" height="34" rx="17"/><rect x="136" y="447" width="112" height="34" rx="17"/><rect x="258" y="447" width="160" height="34" rx="17"/></g>
+  <g fill="#c8d7f5" font-size="13" text-anchor="middle"><text x="91" y="469">C#</text><text x="192" y="469">APIs REST</text><text x="338" y="469">ARQUITETURA</text></g>
+  <g fill="none" stroke="#35548a"><ellipse cx="927" cy="301" rx="203" ry="204"/><ellipse cx="927" cy="301" rx="154" ry="155" stroke-dasharray="3 10"/></g>
+  <g fill="none" stroke="url(#line)" stroke-width="2"><path d="M740 211H792L838 260M1014 260L1063 211H1110M744 397H790L838 349M1014 349L1062 397H1110"/></g>
+  <g fill="#91b8ff"><circle cx="740" cy="211" r="5"/><circle cx="1110" cy="211" r="5"/><circle cx="744" cy="397" r="5"/><circle cx="1110" cy="397" r="5"/></g>
+  <rect x="824" y="202" width="204" height="204" rx="38" fill="#3972ff" opacity=".09" transform="rotate(12 926 304)"/>
+  <rect x="832" y="210" width="188" height="188" rx="30" fill="url(#panel)" stroke="#5686ff"/>
+  <path d="M852 247V231H868M984 231H1000V247M852 361V377H868M984 377H1000V361" fill="none" stroke="#81a4ff"/>
+  <text x="926" y="316" text-anchor="middle" fill="#f2f6ff" font-size="49" font-weight="700" letter-spacing="-2">.NET</text>
+  <text x="926" y="346" text-anchor="middle" fill="#88aaf6" font-size="11" letter-spacing="3">ENGINEERED TO CONNECT</text>
+  <text x="927" y="127" text-anchor="middle" fill="#8ba9df" font-size="12" letter-spacing="3">CÓDIGO → CONEXÕES</text>
+  <path d="M56 533H1144" stroke="#283247"/>
+  <text x="56" y="577" fill="#9caac5" font-size="17">matheusfrodrigues.vercel.app</text>
+  <text x="1098" y="577" text-anchor="end" fill="#dde7ff" font-size="15">EXPLORE OS PROJETOS</text>
+  <path d="M1117 570H1140M1133 563L1140 570L1133 577" fill="none" stroke="#729cff" stroke-width="2"/>
+</g>
+</svg>
