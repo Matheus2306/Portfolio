@@ -12,22 +12,51 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
   useEffect(() => {
+    const sections = Array.from(document.querySelectorAll("main > section[id]"));
+    let frame = 0;
+    let currentId = null;
+
+    const updateActive = () => {
+      frame = 0;
+      const padding = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop);
+      const readingLine = (Number.isFinite(padding) ? padding : 110) + 1;
+      let nextId = "";
+
+      // Choose by document position, not IntersectionObserver callback order.
+      // Only top-level sections belong to the page navigation.
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top > readingLine) break;
+        nextId = section.id;
+      }
+
+      if (nextId !== currentId) {
+        currentId = nextId;
+        setActive(nextId);
+      }
+    };
+
+    const scheduleUpdate = () => {
+      if (!frame) frame = requestAnimationFrame(updateActive);
+    };
+
     const observer = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        }),
+      scheduleUpdate,
       { rootMargin: "-10% 0px -50% 0px" },
     );
-    document
-      .querySelectorAll("main section[id]")
-      .forEach((el) => observer.observe(el));
+    sections.forEach((section) => observer.observe(section));
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    scheduleUpdate();
+
     const escape = (e) => {
       if (e.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", escape);
     return () => {
       observer.disconnect();
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
       window.removeEventListener("keydown", escape);
     };
   }, []);
