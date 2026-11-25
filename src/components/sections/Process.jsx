@@ -92,7 +92,7 @@ export default function Process() {
       aria-labelledby="process-heading"
     >
       <div className="section-kicker">
-        <span>04 / COMO EU PENSO</span>
+        <span>05 / COMO EU PENSO</span>
         <span>DO PROBLEMA À SOLUÇÃO</span>
       </div>
 

@@ -166,7 +166,7 @@ export default function Stack() {
     <section id="stack" className="stack-section stack-connected section-shell" aria-labelledby="stack-heading">
       <Reveal className="stack-heading-row">
         <div>
-          <div className="section-kicker"><span>03 / TECNOLOGIAS</span></div>
+          <div className="section-kicker"><span>04 / TECNOLOGIAS</span></div>
           <h2 id="stack-heading">A stack certa.<br />Tudo <span className="blue">conectado.</span></h2>
         </div>
         <div className="stack-introduction">

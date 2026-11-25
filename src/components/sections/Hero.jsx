@@ -141,7 +141,7 @@ export default function Hero() {
           UM POUCO MAIS ABAIXO
         </a>
         <span>IDEIAS BEM CONSTRUÍDAS. DO CÓDIGO AO MUNDO.</span>
-        <span className="hero-index">01 — 05</span>
+        <span className="hero-index">01 — 06</span>
       </div>
     </section>
   );

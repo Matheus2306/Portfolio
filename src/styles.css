@@ -1279,7 +1279,7 @@ img {
     font-size: 7px;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 760px) {
   .floating-header {
     height: 58px;
     top: 16px;
@@ -1313,6 +1313,9 @@ img {
     left: 0;
     right: 0;
     padding: 12px 20px;
+    max-height: calc(100dvh - 102px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     border: 1px solid #ffffff20;
     background: #121620f7;
     backdrop-filter: blur(24px);
@@ -1329,6 +1332,8 @@ img {
   .mobile-nav a + a {
     border-top: 1px solid var(--line);
   }
+}
+@media (max-width: 600px) {
   .hero {
     padding-top: 145px;
     min-height: 870px;

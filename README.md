@@ -29,7 +29,7 @@ Para recriar a arte, edite `scripts/generate-social-preview.mjs` e execute `npm 
 - `src/data.js`: nome, e-mail, GitHub, LinkedIn e conteúdo dos projetos. Para habilitar o LinkedIn no rodapé, substitua `null` pela URL completa.
 - `src/App.jsx`: composição da página, com as seções na ordem de apresentação.
 - `src/components/layout/`: cabeçalho, navegação e rodapé.
-- `src/components/sections/`: apresentação, sobre, projetos, tecnologias, processo e contato. A seção de projetos controla a seleção e a abertura do modal.
+- `src/components/sections/`: apresentação, sobre, trajetória, projetos, tecnologias, processo e contato. A seção de projetos controla a seleção e a abertura do modal.
 - `src/components/projects/`: card de projeto e modal de detalhes.
 - `src/components/ui/`: animação de entrada, revelação de palavras e barra de progresso da leitura.
 - `src/styles.css`: paleta, tipografia, responsividade e efeitos.
@@ -39,6 +39,8 @@ Para recriar a arte, edite `scripts/generate-social-preview.mjs` e execute `npm 
 - `src/styles/stack-connections.css`: diagrama interativo, detalhes e responsividade da stack.
 - `src/components/sections/Process.jsx`: conteúdo das três etapas e progresso da linha de processo.
 - `src/styles/process-story.css`: apresentação da linha de processo, marcadores e comportamento responsivo.
+- `src/data/timeline.js`: marcos da trajetória, períodos, descrições, temas e links. Os rótulos atuais descrevem formação e projetos; datas de início e término não foram inferidas. Para inserir datas reais, altere `period` (por exemplo, `"2024 — atual"`) e ordene os marcos conforme a cronologia informada.
+- `src/components/sections/Timeline.jsx` e `src/styles/timeline.css`: timeline de trajetória, com cartões alternados no desktop e uma coluna no celular.
 - `scripts/generate-assets.mjs`: gera cinco imagens WebP e um GIF animado em `public/images/`, com `npm run assets`. Os arquivos já estão incluídos; não é necessário regenerá-los para executar ou compilar.
 
 Os projetos exibidos são definidos em `src/data.js`, com descrições, tecnologias, funcionalidades e links próprios. O contato usa `mailto:` e a cópia do e-mail usa a Clipboard API, com aviso caso o navegador a bloqueie.
@@ -47,6 +49,8 @@ Os projetos exibidos são definidos em `src/data.js`, com descrições, tecnolog
 
 - Abertura com parallax vinculado ao scroll.
 - Texto da seção Sobre revelado progressivamente por palavra.
+- Trajetória após Sobre: linha que acompanha o scroll e marcadores por tema, com todos os textos sempre visíveis. O layout alternado vira uma coluna abaixo de 900 px; com movimento reduzido, a apresentação é estática. O endereço da seção é `/#trajetoria`.
+- O menu inclui Trajetória e passa ao modo compacto até 760 px para acomodar a nova opção.
 - Galeria sticky em desktop: o scroll vertical movimenta os projetos horizontalmente, sem capturar a roda do mouse. As imagens têm revelação por recorte e parallax interno; títulos, iluminação ambiente e indicadores individuais acompanham a posição da galeria.
 - Detalhes dos projetos em diálogo nativo ampliado, com transição visual entre a imagem do card e a imagem do diálogo, retorno ao card ao fechar e navegação por teclado.
 - Stack em diagrama interativo: React/TypeScript, API .NET, Entity Framework, banco relacional e Redis. As linhas se revelam na entrada da seção; hover e foco destacam as conexões imediatas. A seleção por clique, Enter ou espaço exibe o papel da tecnologia e exemplos dos projetos.
