@@ -1,0 +1,224 @@
+.stack-section.stack-connected {
+  display: block;
+  padding-top: 110px;
+  padding-bottom: 100px;
+}
+
+.stack-heading-row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.stack-heading-row h2 {
+  margin-top: 26px;
+  font-size: clamp(2.125rem, 3.6vw, 3.375rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.stack-introduction { max-width: 380px; }
+.stack-introduction p { font-size: 1rem; line-height: 1.75; color: #a5adbd; }
+.stack-introduction > span { display: block; margin-top: 14px; color: #7f9fff; font-size: 0.875rem; line-height: 1.6; }
+
+.stack-map {
+  padding: 26px clamp(18px, 2.5vw, 38px) 0;
+  overflow: hidden;
+  border: 1px solid #a6b9eb21;
+  border-radius: 16px;
+  background: radial-gradient(ellipse at 40% 15%, #527bff0d, transparent 60%), #0b0e15;
+}
+
+.stack-map-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: #8d98ae;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.stack-map-heading > span:first-child { display: inline-flex; align-items: center; gap: 10px; letter-spacing: 0.08em; }
+.stack-map-heading svg { flex: 0 0 auto; color: #789aff; }
+.stack-map-heading > span:last-child { color: #a7afbd; }
+
+.stack-diagram {
+  position: relative;
+  isolation: isolate;
+  margin-top: 32px;
+  padding: 20px 0 30px;
+  background-image: radial-gradient(#91a6d519 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.stack-nodes {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: clamp(24px, 4vw, 64px);
+  row-gap: 58px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stack-node-slot { position: relative; min-width: 0; }
+.stack-node-slot-interface { grid-column: 1; grid-row: 1; }
+.stack-node-slot-backend { grid-column: 2; grid-row: 1; }
+.stack-node-slot-mapping { grid-column: 3; grid-row: 1; }
+.stack-node-slot-database { grid-column: 4; grid-row: 1; }
+.stack-node-slot-cache { grid-column: 2; grid-row: 2; }
+
+.stack-node {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 148px;
+  height: 100%;
+  padding: 18px clamp(12px, 1.5vw, 22px);
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  text-align: left;
+  border: 1px solid #a6b9eb30;
+  border-radius: 11px;
+  background: #10151f;
+  box-shadow: 0 12px 30px #00000016;
+  scroll-margin-top: 125px;
+  transition: border-color 200ms, background-color 200ms, box-shadow 250ms;
+}
+
+.stack-node::before,
+.stack-node::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  border: 1px solid #7185b3;
+  border-radius: 50%;
+  background: #10151f;
+}
+.stack-node::before { left: -4px; }
+.stack-node::after { right: -4px; }
+.stack-node-slot-interface .stack-node::before,
+.stack-node-slot-database .stack-node::after,
+.stack-node-slot-cache .stack-node::after { display: none; }
+.stack-node-slot-cache .stack-node::before { top: -4px; left: calc(50% - 3px); }
+
+.stack-node.is-connected { border-color: #527bff75; }
+.stack-node:hover { border-color: #7f9fff; }
+.stack-node.is-selected {
+  border-color: #6b8fff;
+  background: #172443;
+  box-shadow: 0 0 0 1px #527bff20, 0 0 34px #527bff15;
+}
+.stack-node:focus-visible { outline: 2px solid #a9beff; outline-offset: 5px; }
+.stack-node.is-selected::before,
+.stack-node.is-selected::after { border-color: #a9beff; background: #7b9bff; }
+
+.stack-node-top { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; width: 100%; color: #9cabc8; }
+.stack-node-top > span { font: 0.75rem "Space Grotesk", sans-serif; letter-spacing: 0.06em; }
+.stack-node-top svg { color: #83a1ff; flex: 0 0 auto; }
+.stack-node-title { margin-top: 17px; font: 500 clamp(1rem, 1.6vw, 1.25rem) / 1.3 "Space Grotesk", sans-serif; letter-spacing: -0.025em; color: #eef2ff; overflow-wrap: anywhere; }
+.stack-node-slot-backend .stack-node-title { font-size: 2rem; line-height: 1; }
+.stack-node-subtitle { margin-top: 8px; font-size: 0.875rem; line-height: 1.55; color: #aab6cd; }
+
+.stack-connections { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.stack-connection path { fill: none; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.stack-connection-base { stroke: #54688850; stroke-width: 1.25; }
+.stack-connection-reveal { stroke: #58729b; stroke-width: 1.25; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1100ms cubic-bezier(0.22, 1, 0.36, 1), stroke 220ms; }
+.stack-map[data-entered="true"] .stack-connection-reveal { stroke-dashoffset: 0; }
+.stack-connection.is-highlighted .stack-connection-reveal { stroke: #7598ff; stroke-width: 1.6; }
+.stack-connection-signal { stroke: #d9e4ff; stroke-width: 2.5; stroke-dasharray: 0.045 0.955; stroke-dashoffset: 1; opacity: 0; animation: stack-connection-travel 1700ms ease-in-out both; animation-play-state: paused; }
+.stack-map[data-in-view="true"] .stack-connection-signal { animation-play-state: running; }
+
+@keyframes stack-connection-travel {
+  0% { stroke-dashoffset: 1; opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+.stack-map-caption { position: absolute; right: 0; bottom: 66px; display: flex; align-items: center; gap: 16px; width: 42%; pointer-events: none; color: #8c99b2; font-size: 0.9375rem; line-height: 1.8; }
+.stack-map-caption strong { color: #bbc7df; font-weight: 400; }
+.stack-caption-rule { width: 38px; height: 1px; background: #6c88c860; }
+
+.stack-details {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(200px, 1fr);
+  gap: clamp(24px, 4vw, 64px);
+  min-height: 243px;
+  padding: 28px 0 26px;
+  border-top: 1px solid #a6b9eb21;
+}
+.stack-overline { color: #8aa6ff; font: 0.75rem "Space Grotesk", sans-serif; letter-spacing: 0.12em; }
+.stack-detail-copy h3 { margin-top: 10px; color: #eef2ff; font-size: clamp(1.25rem, 2vw, 1.625rem); line-height: 1.35; letter-spacing: -0.02em; }
+.stack-detail-copy > p { margin-top: 12px; color: #a5afc2; font-size: 1rem; line-height: 1.75; max-width: 650px; }
+.stack-example { display: block; margin-top: 14px; font-size: 0.8125rem; line-height: 1.65; color: #8c9bb7; }
+.stack-detail-connections h4 { margin: 0 0 10px; color: #aebad0; font-size: 0.875rem; font-weight: 400; }
+.stack-detail-connections ul { margin: 0; padding: 0; list-style: none; }
+.stack-detail-connections li + li { border-top: 1px solid #a6b9eb15; }
+.stack-detail-connections button { display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; min-height: 48px; padding: 10px 0; text-align: left; font-size: 0.875rem; }
+.stack-detail-connections button > span:first-child { color: #d6e0f5; }
+.stack-detail-connections button > span:last-child { color: #8fa0c1; text-align: right; font-size: 0.8125rem; }
+.stack-detail-connections button:hover > span:first-child { color: #8ba7ff; }
+
+.stack-map-note { margin: 0; padding: 18px 0 22px; border-top: 1px solid #a6b9eb16; color: #8f9bb2; font-size: 0.8125rem; line-height: 1.7; }
+
+.stack-foundations { display: grid; grid-template-columns: minmax(170px, 0.9fr) 3fr; gap: 32px; align-items: start; margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--line); }
+.stack-foundation-heading { display: flex; align-items: center; gap: 10px; color: #9eacc9; }
+.stack-foundation-heading svg { flex: 0 0 auto; color: #789aff; }
+.stack-foundation-heading h3 { font-size: 0.9375rem; line-height: 1.5; }
+.stack-foundations ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin: 0; padding: 0; list-style: none; }
+.stack-foundations li > span:first-child { display: block; color: #d5deef; font-size: 0.9375rem; line-height: 1.5; }
+.stack-foundations li > span:last-child { display: block; margin-top: 7px; color: #8996b0; font-size: 0.8125rem; line-height: 1.6; }
+
+@media (max-width: 1100px) {
+  .stack-heading-row { gap: 32px; }
+  .stack-introduction { max-width: 330px; }
+  .stack-map-heading > span:last-child { display: none; }
+  .stack-node { padding-left: 12px; padding-right: 12px; }
+  .stack-node-top { gap: 6px; }
+  .stack-node-top > span { letter-spacing: 0.025em; }
+  .stack-foundations { grid-template-columns: 1fr; gap: 22px; }
+}
+
+@media (max-width: 760px) {
+  .stack-section.stack-connected { padding-top: 75px; padding-bottom: 70px; }
+  .stack-heading-row { display: block; margin-bottom: 30px; }
+  .stack-heading-row h2 { margin-top: 22px; }
+  .stack-introduction { max-width: 530px; margin-top: 24px; }
+  .stack-map { padding: 22px 16px 0; border-radius: 12px; }
+  .stack-map-heading { font-size: 0.75rem; }
+  .stack-map-heading > span:first-child { letter-spacing: 0.045em; gap: 8px; }
+  .stack-diagram { padding: 0 0 22px; margin-top: 26px; }
+  .stack-nodes { display: flex; flex-direction: column; gap: 22px; padding-left: 40px; }
+  .stack-node { min-height: 112px; height: auto; padding: 17px 18px; }
+  .stack-node-top > span { font-size: 0.75rem; letter-spacing: 0.06em; }
+  .stack-node-top { gap: 9px; }
+  .stack-node-title { font-size: 1.125rem; margin-top: 11px; }
+  .stack-node-slot-backend .stack-node-title { font-size: 1.625rem; }
+  .stack-node-subtitle { font-size: 0.875rem; margin-top: 6px; }
+  .stack-node::after { display: none; }
+  .stack-node-slot-interface .stack-node::before,
+  .stack-node-slot-cache .stack-node::before { display: block; left: -4px; top: calc(50% - 3px); }
+  .stack-map-caption { display: none; }
+  .stack-details { display: block; min-height: 0; border-top: 0; padding: 20px 0 6px; }
+  .stack-detail-copy h3 { font-size: 1.1875rem; }
+  .stack-detail-copy > p { font-size: 1rem; line-height: 1.7; }
+  .stack-detail-connections { margin-top: 22px; }
+  .stack-detail-connections button { flex-wrap: wrap; gap: 4px 12px; }
+  .stack-map-note { font-size: 0.8125rem; padding: 17px 0 20px; }
+  .stack-foundations ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack-connection-reveal { stroke-dashoffset: 0; }
+  .stack-connection-signal { display: none; }
+  .stack-map *, .stack-map *::before, .stack-map *::after { animation: none !important; transition: none !important; }
+}
