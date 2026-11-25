@@ -881,40 +881,6 @@ img {
   letter-spacing: -1.7px;
   margin-top: 38px;
 }
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 55px;
-  margin-top: 60px;
-  perspective: 1000px;
-}
-.process-step {
-  border-top: 1px solid #ffffff1b;
-  padding-top: 20px;
-}
-.process-step > span {
-  display: flex;
-  justify-content: space-between;
-  color: #6c84bc;
-  font:
-    11px "Space Grotesk",
-    monospace;
-}
-.process-step > span svg {
-  color: #45516b;
-}
-.process-step h3 {
-  font-size: 20px;
-  letter-spacing: -0.5px;
-  margin-top: 24px;
-}
-.process-step p {
-  font-size: 12px;
-  line-height: 1.9;
-  color: #8a92a4;
-  margin-top: 13px;
-  max-width: 310px;
-}
 .contact-section {
   padding-top: 85px;
   padding-bottom: 95px;
@@ -1103,25 +1069,6 @@ img {
 @keyframes nudge {
   50% {
     transform: translateY(3px);
-  }
-}
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .process-step {
-      animation: card-depth linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 100%;
-    }
-    @keyframes card-depth {
-      from {
-        transform: rotateX(14deg) translateY(28px);
-        filter: blur(3px);
-      }
-      to {
-        transform: rotateX(0) translateY(0);
-        filter: blur(0);
-      }
-    }
   }
 }
 @media (min-width: 1600px) {
@@ -1320,12 +1267,6 @@ img {
   }
   .stack-art {
     width: 210px;
-  }
-  .process-grid {
-    gap: 25px;
-  }
-  .process-step h3 {
-    font-size: 18px;
   }
   .contact-section h2 {
     font-size: 67px;
@@ -1580,20 +1521,6 @@ img {
     letter-spacing: -1.1px;
     margin-top: 30px;
   }
-  .process-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    margin-top: 35px;
-  }
-  .process-step h3 {
-    font-size: 21px;
-    margin-top: 15px;
-  }
-  .process-step p {
-    max-width: none;
-    font-size: 12px;
-    margin-top: 10px;
-  }
   .contact-section {
     padding-top: 60px;
     padding-bottom: 55px;
@@ -1681,3 +1608,4 @@ img {
     top: auto;
   }
 }
+
