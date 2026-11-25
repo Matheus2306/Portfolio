@@ -33,19 +33,21 @@ Para recriar a arte, edite `scripts/generate-social-preview.mjs` e execute `npm 
 - `src/components/projects/`: card de projeto e modal de detalhes.
 - `src/components/ui/`: animação de entrada, revelação de palavras e barra de progresso da leitura.
 - `src/styles.css`: paleta, tipografia, responsividade e efeitos.
+- `src/styles/projects-motion.css`: galeria cinematográfica e visualização expandida dos projetos.
 - `scripts/generate-assets.mjs`: gera cinco imagens WebP e um GIF animado em `public/images/`, com `npm run assets`. Os arquivos já estão incluídos; não é necessário regenerá-los para executar ou compilar.
 
-Os projetos Nexus API, Pulse Monitor e Flow Engine são **conceitos demonstrativos**, identificados na interface, e não representam trabalhos reais de Matheus. Substitua-os pelos seus projetos e links quando disponíveis. O contato usa `mailto:` e a cópia do e-mail usa a Clipboard API, com aviso caso o navegador a bloqueie.
+Os projetos exibidos são definidos em `src/data.js`, com descrições, tecnologias, funcionalidades e links próprios. O contato usa `mailto:` e a cópia do e-mail usa a Clipboard API, com aviso caso o navegador a bloqueie.
 
 ## Movimento e acessibilidade
 
 - Abertura com parallax vinculado ao scroll.
 - Texto da seção Sobre revelado progressivamente por palavra.
-- Galeria sticky em desktop: o scroll vertical movimenta os projetos horizontalmente, sem capturar a roda do mouse.
+- Galeria sticky em desktop: o scroll vertical movimenta os projetos horizontalmente, sem capturar a roda do mouse. As imagens têm revelação por recorte e parallax interno; títulos, iluminação ambiente e indicadores individuais acompanham a posição da galeria.
+- Detalhes dos projetos em diálogo nativo ampliado, com transição visual entre a imagem do card e a imagem do diálogo, retorno ao card ao fechar e navegação por teclado.
 - Coluna lateral fixa na seção de tecnologias.
 - Entrada de conteúdo com Motion e perspectiva 3D com blur progressivo via CSS quando há suporte a `animation-timeline`.
 - Menu móvel, link para pular ao conteúdo, foco visível e modal nativo com fechamento por Escape e retorno do foco.
-- Em telas abaixo de 900 px e com `prefers-reduced-motion`, os projetos seguem o fluxo vertical. O GIF é substituído por um WebP estático para movimento reduzido.
+- Em telas abaixo de 900 px, com altura inferior a 700 px ou com `prefers-reduced-motion`, os projetos seguem o fluxo normal da página. A transição do diálogo é desativada para movimento reduzido. O GIF é substituído por um WebP estático para movimento reduzido.
 - As fontes usam Google Fonts com fallback local sans-serif; as imagens são locais.
 
 Referência visual de scroll fornecida pelo usuário: https://freefrontend.com/css-scroll-effects/. A implementação e as artes foram produzidas para este projeto.
