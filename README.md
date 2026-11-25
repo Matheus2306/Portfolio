@@ -56,6 +56,7 @@ Os projetos exibidos são definidos em `src/data.js`, com descrições, tecnolog
 - O título do processo acompanha a leitura apenas em telas a partir de 1000 px de largura e 760 px de altura. Em telas menores, baixas ou com movimento reduzido, segue o fluxo normal. Os textos ficam sempre visíveis; a linha e os marcadores são estáticos para movimento reduzido.
 - Entrada de conteúdo com Motion, respeitando a preferência de movimento reduzido.
 - Menu móvel, link para pular ao conteúdo, foco visível e modal nativo com fechamento por Escape e retorno do foco.
+- Links diretos, como `/#stack` e `/#processo`, são alinhados após a montagem inicial do React e o carregamento das fontes. Qualquer interação do visitante cancela correções pendentes; a navegação posterior e a restauração de histórico continuam nativas.
 - Em telas abaixo de 900 px, com altura inferior a 700 px ou com `prefers-reduced-motion`, os projetos seguem o fluxo normal da página. A transição do diálogo é desativada para movimento reduzido.
 - As fontes usam Google Fonts com fallback local sans-serif; as imagens são locais.
 
