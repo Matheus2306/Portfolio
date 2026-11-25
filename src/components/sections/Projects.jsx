@@ -143,7 +143,7 @@ export default function Projects() {
           <div className="section-shell projects-heading">
             <div>
               <div className="section-kicker">
-                <span>02 / PROJETOS SELECIONADOS</span>
+                <span>03 / PROJETOS SELECIONADOS</span>
               </div>
               <h2>Ideias que viram <span className="serif-word">sistemas.</span></h2>
             </div>

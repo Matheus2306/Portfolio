@@ -3,6 +3,7 @@ import { ArrowUpRight, Code2, Menu, X } from "lucide-react";
 
 const links = [
   ["sobre", "Sobre"],
+  ["trajetoria", "Trajetória"],
   ["projetos", "Projetos"],
   ["stack", "Stack"],
 ];

@@ -24,7 +24,7 @@ export default function Contact() {
       <div className="contact-glow" aria-hidden="true" />
       <Reveal>
         <div className="section-kicker">
-          <span>05 / VAMOS CONVERSAR</span>
+          <span>06 / VAMOS CONVERSAR</span>
           <span>
             <span className="status-dot" /> CONEXÕES CRIAM POSSIBILIDADES
           </span>
