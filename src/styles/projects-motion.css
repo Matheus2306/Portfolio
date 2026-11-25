@@ -1,0 +1,234 @@
+/* Cinematic project gallery: movement is limited to desktop layouts. */
+.projects-sticky {
+  position: relative;
+  isolation: isolate;
+}
+.is-horizontal .projects-sticky {
+  min-height: 0;
+}
+.project-ambient {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 70% 48%, currentColor, transparent 69%);
+  opacity: 0.12;
+  transition: color 0.75s ease;
+}
+.projects-section:not(.is-horizontal) .project-ambient {
+  display: none;
+}
+.projects-track {
+  position: relative;
+}
+.project-image-reveal,
+.project-image-parallax {
+  position: absolute;
+  inset: 0;
+}
+.project-image-parallax > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.2, 0.6, 0.3, 1);
+}
+.project-image-button:hover .project-image-parallax > img {
+  transform: scale(1.035);
+}
+.project-caption h3 button {
+  text-align: left;
+}
+.project-open {
+  transition: background 0.2s, transform 0.3s;
+}
+.project-image-button:hover .project-open {
+  transform: translate(2px, -2px);
+}
+.projects-progress button {
+  padding: 10px 0;
+  width: clamp(20px, 2.5vw, 40px);
+  display: grid;
+  align-items: center;
+}
+.projects-progress .project-progress-rail {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: #283047;
+}
+.projects-progress .project-progress-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--blue);
+  transform-origin: left;
+}
+.projects-progress button.selected .project-progress-rail {
+  height: 3px;
+  background: #527bff40;
+}
+
+/* Native modal stays in the browser top layer; its image travels between
+   the card and the expanded panel using a separate, clipped image frame. */
+.project-dialog.project-dialog-expanded {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+}
+.project-dialog-expanded[open] {
+  display: grid;
+  place-items: center;
+}
+.project-dialog-expanded::backdrop {
+  background: #03050bdb;
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.project-dialog-expanded[data-visible="true"]::backdrop {
+  opacity: 1;
+}
+.project-dialog-expanded .dialog-panel {
+  width: min(1280px, calc(100% - 48px));
+  max-height: calc(100dvh - 48px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  background: #10141e;
+  border: 1px solid #ffffff25;
+  border-radius: 16px;
+  box-shadow: 0 30px 100px #000a;
+}
+.dialog-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px clamp(18px, 3vw, 36px);
+  background: #10141ef5;
+  border-bottom: 1px solid #ffffff12;
+}
+.project-dialog-expanded .dialog-close {
+  position: static;
+  flex-shrink: 0;
+}
+.dialog-hero {
+  background: #0b0f19;
+}
+.dialog-hero > img {
+  display: block;
+  width: 100%;
+  height: clamp(180px, 45dvh, 480px);
+  object-fit: cover;
+}
+.project-dialog-expanded .dialog-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  padding: clamp(22px, 4vw, 52px);
+}
+.dialog-overview h2 {
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+.dialog-overview > p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #a0abc2;
+  margin: 18px 0 25px;
+}
+.dialog-overview h3,
+.dialog-features h3 {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.dialog-features {
+  border-left: 1px solid var(--line);
+  padding-left: clamp(20px, 3vw, 40px);
+}
+.dialog-features ul {
+  margin-top: 14px;
+}
+.dialog-features li {
+  align-items: flex-start;
+  line-height: 1.65;
+}
+.dialog-features li svg {
+  margin-top: 3px;
+}
+.dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+.dialog-actions .button {
+  gap: 12px;
+}
+.dialog-secondary {
+  border: 1px solid #ffffff25;
+  background: #ffffff06;
+}
+.dialog-secondary:hover {
+  background: #527bff20;
+}
+.dialog-transition-image {
+  position: fixed;
+  z-index: 5;
+  visibility: hidden;
+  pointer-events: none;
+  max-width: none;
+  object-fit: cover;
+}
+@media (max-width: 899px) {
+  .project-dialog-expanded .dialog-content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .dialog-features {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
+    padding-top: 22px;
+  }
+}
+@media (max-width: 600px) {
+  .project-dialog-expanded .dialog-panel {
+    width: 100%;
+    max-height: 100dvh;
+    height: 100dvh;
+    border: 0;
+    border-radius: 0;
+  }
+  .dialog-hero > img {
+    height: auto;
+    aspect-ratio: 1.7;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-image-reveal,
+  .project-image-parallax,
+  .project-caption {
+    transform: none !important;
+    clip-path: none !important;
+    opacity: 1 !important;
+  }
+  .project-image-button:hover .project-image-parallax > img,
+  .project-image-button:hover .project-open {
+    transform: none;
+  }
+}
