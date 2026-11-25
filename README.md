@@ -37,6 +37,8 @@ Para recriar a arte, edite `scripts/generate-social-preview.mjs` e execute `npm 
 - `src/data/stack.js`: tecnologias, conexões, descrições e princípios exibidos na seção de stack.
 - `src/components/stack/connection-path.js`: traçado das conexões no desktop e no fluxo vertical.
 - `src/styles/stack-connections.css`: diagrama interativo, detalhes e responsividade da stack.
+- `src/components/sections/Process.jsx`: conteúdo das três etapas e progresso da linha de processo.
+- `src/styles/process-story.css`: apresentação da linha de processo, marcadores e comportamento responsivo.
 - `scripts/generate-assets.mjs`: gera cinco imagens WebP e um GIF animado em `public/images/`, com `npm run assets`. Os arquivos já estão incluídos; não é necessário regenerá-los para executar ou compilar.
 
 Os projetos exibidos são definidos em `src/data.js`, com descrições, tecnologias, funcionalidades e links próprios. O contato usa `mailto:` e a cópia do e-mail usa a Clipboard API, com aviso caso o navegador a bloqueie.
@@ -50,7 +52,9 @@ Os projetos exibidos são definidos em `src/data.js`, com descrições, tecnolog
 - Stack em diagrama interativo: React/TypeScript, API .NET, Entity Framework, banco relacional e Redis. As linhas se revelam na entrada da seção; hover e foco destacam as conexões imediatas. A seleção por clique, Enter ou espaço exibe o papel da tecnologia e exemplos dos projetos.
 - Em telas de até 760 px, a stack segue um fluxo vertical com detalhes junto ao item selecionado. Os traçados são recalculados quando o layout, as fontes ou a seleção alteram a geometria. Docker, Git, Clean Architecture e SOLID aparecem como base da entrega.
 - Os pulsos das conexões são curtos, acionados pela interação e pausados fora da tela. Com movimento reduzido, o diagrama permanece estático e todas as informações continuam disponíveis.
-- Entrada de conteúdo com Motion e perspectiva 3D com blur progressivo via CSS quando há suporte a `animation-timeline`.
+- Seção "Como eu penso" em uma lista vertical: a linha azul avança com a rolagem e os marcadores ganham destaque ao passar por 60% da altura da tela. Cada trecho acompanha a altura real da etapa, incluindo quebras de texto.
+- O título do processo acompanha a leitura apenas em telas a partir de 1000 px de largura e 760 px de altura. Em telas menores, baixas ou com movimento reduzido, segue o fluxo normal. Os textos ficam sempre visíveis; a linha e os marcadores são estáticos para movimento reduzido.
+- Entrada de conteúdo com Motion, respeitando a preferência de movimento reduzido.
 - Menu móvel, link para pular ao conteúdo, foco visível e modal nativo com fechamento por Escape e retorno do foco.
 - Em telas abaixo de 900 px, com altura inferior a 700 px ou com `prefers-reduced-motion`, os projetos seguem o fluxo normal da página. A transição do diálogo é desativada para movimento reduzido.
 - As fontes usam Google Fonts com fallback local sans-serif; as imagens são locais.
