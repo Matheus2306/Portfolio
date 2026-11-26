@@ -39,8 +39,9 @@ Para recriar a arte, edite `scripts/generate-social-preview.mjs` e execute `npm 
 - `src/styles/stack-connections.css`: diagrama interativo, detalhes e responsividade da stack.
 - `src/components/sections/Process.jsx`: conteúdo das três etapas e progresso da linha de processo.
 - `src/styles/process-story.css`: apresentação da linha de processo, marcadores e comportamento responsivo.
-- `src/data/timeline.js`: marcos da trajetória, períodos, descrições, temas e links. Os rótulos atuais descrevem formação e projetos; datas de início e término não foram inferidas. Para inserir datas reais, altere `period` (por exemplo, `"2024 — atual"`) e ordene os marcos conforme a cronologia informada.
-- `src/components/sections/Timeline.jsx` e `src/styles/timeline.css`: timeline de trajetória, com cartões alternados no desktop e uma coluna no celular.
+- `src/data/timeline.js`: marcos da trajetória, períodos, descrições, temas, links e imagens (`media.src`, `media.alt` e `media.caption`). Os rótulos atuais e a ordem foram preservados; datas de início e término não foram inferidas. Para inserir datas reais, altere `period` e ordene os marcos conforme a cronologia informada.
+- `src/components/sections/Timeline.jsx` e `src/styles/timeline.css`: timeline com períodos grandes e textos abertos à esquerda; painel visual à direita que acompanha a leitura. A composição foi inspirada em https://ayushsingh.co.in/, com implementação própria e os conteúdos deste portfólio.
+- `public/images/timeline-education.svg`: ilustração vetorial original para a formação em GTI. O marco de projetos reutiliza a imagem do Orbis Commerce.
 - `scripts/generate-assets.mjs`: gera cinco imagens WebP e um GIF animado em `public/images/`, com `npm run assets`. Os arquivos já estão incluídos; não é necessário regenerá-los para executar ou compilar.
 
 Os projetos exibidos são definidos em `src/data.js`, com descrições, tecnologias, funcionalidades e links próprios. O contato usa `mailto:` e a cópia do e-mail usa a Clipboard API, com aviso caso o navegador a bloqueie.
@@ -49,7 +50,9 @@ Os projetos exibidos são definidos em `src/data.js`, com descrições, tecnolog
 
 - Abertura com parallax vinculado ao scroll.
 - Texto da seção Sobre revelado progressivamente por palavra.
-- Trajetória após Sobre: linha que acompanha o scroll e marcadores por tema, com todos os textos sempre visíveis. O layout alternado vira uma coluna abaixo de 900 px; com movimento reduzido, a apresentação é estática. O endereço da seção é `/#trajetoria`.
+- Trajetória após Sobre: linha fina com marcadores medidos no DOM, períodos em destaque e descrições sempre visíveis. O preenchimento da linha, o destaque do marco e a troca de imagem usam uma linha de leitura a 55% da altura da tela.
+- Em telas a partir de 1000 px de largura e 760 px de altura, com movimento normal, um painel sticky à direita faz a transição por opacidade entre as imagens. A altura disponível limita o painel; imagens e legendas reservam seu espaço durante a troca.
+- Em telas menores, baixas ou com movimento reduzido, cada imagem aparece junto ao texto correspondente. Movimento reduzido mantém a linha completa e sem transições. O endereço da seção continua sendo `/#trajetoria`.
 - O menu inclui Trajetória e passa ao modo compacto até 760 px para acomodar a nova opção.
 - Galeria sticky em desktop: o scroll vertical movimenta os projetos horizontalmente, sem capturar a roda do mouse. As imagens têm revelação por recorte e parallax interno; títulos, iluminação ambiente e indicadores individuais acompanham a posição da galeria.
 - Detalhes dos projetos em diálogo nativo ampliado, com transição visual entre a imagem do card e a imagem do diálogo, retorno ao card ao fechar e navegação por teclado.
