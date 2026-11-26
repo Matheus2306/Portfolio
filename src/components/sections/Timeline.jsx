@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useReducedMotion } from "motion/react";
-import { Code2, GraduationCap, Layers3 } from "lucide-react";
+import { BriefcaseBusiness, Code2, GraduationCap, TrophyIcon } from "lucide-react";
 import { timelineMilestones } from "../../data/timeline";
 import Reveal from "../ui/Reveal";
 import "../../styles/timeline.css";
@@ -8,7 +8,8 @@ import "../../styles/timeline.css";
 const milestoneIcons = {
   education: GraduationCap,
   code: Code2,
-  architecture: Layers3,
+  Trophy: TrophyIcon,
+  briefcaseBusiness: BriefcaseBusiness
 };
 
 function useTimelineReading(routeRef, reduced, count) {

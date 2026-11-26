@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="760" viewBox="0 0 1200 760"
+     fill="none" role="img"
+     aria-labelledby="engineer-title engineer-description">
+  <title id="engineer-title">Engineer Hub — Jovens Engenheiros 2025</title>
+  <desc id="engineer-description">
+    Ilustração de uma engrenagem com símbolo de código e conexões em azul.
+    Equipe Engineer Hub, desafio Jovens Engenheiros da Unicamp, 2025.
+  </desc>
+
+  <defs>
+    <linearGradient id="engineer-gear"
+                    x1="-90" y1="-90" x2="100" y2="100"
+                    gradientUnits="userSpaceOnUse">
+      <stop stop-color="#233E78"/>
+      <stop offset="1" stop-color="#16243D"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="760" fill="#101827"/>
+
+  <!-- Cantos e divisória no mesmo tema da timeline. -->
+  <g stroke="#25334A" stroke-width="1">
+    <path d="M64 112V64H112"/>
+    <path d="M1088 64H1136V112"/>
+    <path d="M64 648V696H112"/>
+    <path d="M1088 696H1136V648"/>
+    <path d="M94 598H1106"/>
+  </g>
+
+  <!-- Equipe e desafio. -->
+  <g font-family="'DM Sans', 'Segoe UI', Arial, sans-serif">
+    <text x="94" y="161" fill="#91ADFF"
+          font-size="17" font-weight="500" letter-spacing="2.5">ENGENHARIA</text>
+    <text id="engineer-name" x="88" y="284" fill="#EDF3FF"
+          font-size="96" font-weight="600" letter-spacing="-5">ENGINEER HUB</text>
+    <text x="94" y="340" fill="#D1DDF4"
+          font-size="34" font-weight="500" letter-spacing="-0.6">JOVENS ENGENHEIROS</text>
+    <text x="94" y="417" fill="#A6B5CE"
+          font-size="25" font-weight="400">Desafio Unicamp · 2025</text>
+  </g>
+
+  <rect x="94" y="493" width="56" height="3" rx="1.5" fill="#527BFF"/>
+  <path d="M165 494.5H310" stroke="#33445F" stroke-width="1"/>
+
+  <!-- Circuitos atrás da engrenagem. -->
+  <g stroke="#354F7A" stroke-width="2"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M866 423H787C779 423 774 418 774 410V387C774 379 779 374 787 374H805"/>
+    <path d="M1014 465H1058C1067 465 1072 470 1072 479V554C1072 563 1067 568 1058 568H1011"/>
+  </g>
+  <g fill="#101827" stroke="#6B91F4" stroke-width="2">
+    <circle cx="811" cy="374" r="6"/>
+    <circle cx="1005" cy="568" r="6"/>
+  </g>
+
+  <!-- Engrenagem de oito dentes em um único contorno. -->
+  <g transform="translate(924 467)">
+    <path d="M-24.0 -78.4
+           L-15.6 -98.8 L15.6 -98.8 L24.0 -78.4
+           A82 82 0 0 1 38.5 -72.4
+           L58.8 -80.9 L80.9 -58.8 L72.4 -38.5
+           A82 82 0 0 1 78.4 -24.0
+           L98.8 -15.6 L98.8 15.6 L78.4 24.0
+           A82 82 0 0 1 72.4 38.5
+           L80.9 58.8 L58.8 80.9 L38.5 72.4
+           A82 82 0 0 1 24.0 78.4
+           L15.6 98.8 L-15.6 98.8 L-24.0 78.4
+           A82 82 0 0 1 -38.5 72.4
+           L-58.8 80.9 L-80.9 58.8 L-72.4 38.5
+           A82 82 0 0 1 -78.4 24.0
+           L-98.8 15.6 L-98.8 -15.6 L-78.4 -24.0
+           A82 82 0 0 1 -72.4 -38.5
+           L-80.9 -58.8 L-58.8 -80.9 L-38.5 -72.4
+           A82 82 0 0 1 -24.0 -78.4Z"
+          fill="url(#engineer-gear)"
+          stroke="#84A4EE" stroke-width="2.5"
+          stroke-linejoin="round"/>
+
+    <circle r="43" fill="#101827" stroke="#84A4EE" stroke-width="2.5"/>
+
+    <!-- Código no centro: engenharia conectada à tecnologia. -->
+    <g stroke="#B9CBFF" stroke-width="3"
+       stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-20 -11L-30 0L-20 11"/>
+      <path d="M20 -11L30 0L20 11"/>
+      <path d="M8 -19L-6 19" stroke="#527BFF"/>
+    </g>
+  </g>
+
+  <g font-family="'DM Sans', 'Segoe UI', Arial, sans-serif"
+     font-size="16" fill="#8497B7" letter-spacing="1.4">
+    <text x="94" y="645">ENGENHARIA</text>
+    <text x="470" y="645">TECNOLOGIA</text>
+    <text x="938" y="645">INOVAÇÃO</text>
+  </g>
+  <g stroke="#425B83" stroke-width="1.5" stroke-linecap="round">
+    <path d="M321 638H371"/>
+    <path d="M803 638H853"/>
+  </g>
+</svg>
+

@@ -6,6 +6,56 @@ const orbis = projects.find((project) => project.name === "Orbis Commerce");
 // media supplies the image, accessible alternative and caption for the scroll preview.
 export const timelineMilestones = [
   {
+    id: "Formação",
+    icon: "education",
+    category: "Formação",
+    period: "2024 - 2026",
+    context: "Foramação de Ensino médio e técnico",
+    title: "SESI · SENAI",
+    subtitle: "Ensino técnico integrado com ensino médio",
+    description: "Curso tecnico de desenvolvimento de sistemas",
+    tags: ["React", "C# / .NET", "MS SQL", "IoT", "Vite"],
+    media: {
+      src: "/images/timeline-edu.svg",
+      alt: "Ilustração de livro e capelo representando a formação de Ensino Médio SESI Jaú.",
+      caption: "Formação em Ensino Médio · SESI Jahu",
+    },
+  },
+  {
+    id: "Desafio",
+    icon: "Trophy",
+    category: "Desafio",
+    period: "2024",
+    context: "Jovens Invadores Sicredi · SEBRAE",
+    title: "JOVENS INOVADORES",
+    subtitle: "Desafio de inovações startup",
+    description:
+      "4º colocado no ranking dos projetos, realisado em 2024 · Equipe Health Life",
+    tags: ["Inovação", "Desafio", "Saúde", "Tecnologia"],
+    media: {
+      src: "/images/timeline-healthlife.svg",
+      alt: "HealthLife: ilustração de um coração com pulso e conexões de tecnologia.",
+      caption: "HealthLife · Jovens Inovadores Sicredi 2024",
+    },
+  },
+  {
+    id: "Desafio",
+    icon: "Trophy",
+    category: "Desafio",
+    period: "2025",
+    context: "Jovens Engenheiros | UNICAMP",
+    title: "JOVENS ENGENHEIROS",
+    subtitle: "Desafio de atividades propostas por doutores da universidade",
+    description:
+      "5º colocado no ranking dos grupos participados, realisado em 2025 · Equipe Engineer Hub",
+    tags: ["Inovação", "Desafio", "Conjunto de atividades"],
+    media: {
+      src: "/images/timeline-engineer-hub.svg",
+      alt: "Engineer Hub: ilustração de uma engrenagem com código e conexões de tecnologia.",
+      caption: "Engineer Hub · Jovens Engenheiros Unicamp 2025",
+    },
+  },
+  {
     id: "projetos",
     icon: "code",
     category: "Projetos",

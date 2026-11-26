@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="760" viewBox="0 0 1200 760"
+     fill="none" role="img"
+     aria-labelledby="healthlife-title healthlife-description">
+  <title id="healthlife-title">HealthLife — Jovens Inovadores 2024</title>
+  <desc id="healthlife-description">
+    Ilustração de um coração com linha de pulso e conexões em azul.
+    HealthLife, desafio Jovens Inovadores da Sicredi, 2024.
+  </desc>
+
+  <defs>
+    <linearGradient id="healthlife-heart"
+                    x1="802" y1="365" x2="1046" y2="564"
+                    gradientUnits="userSpaceOnUse">
+      <stop stop-color="#233E78"/>
+      <stop offset="1" stop-color="#16243D"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="760" fill="#101827"/>
+
+  <!-- Cantos e divisória no mesmo tema da timeline. -->
+  <g stroke="#25334A" stroke-width="1">
+    <path d="M64 112V64H112"/>
+    <path d="M1088 64H1136V112"/>
+    <path d="M64 648V696H112"/>
+    <path d="M1088 696H1136V648"/>
+    <path d="M94 598H1106"/>
+  </g>
+
+  <!-- Textos solicitados. -->
+  <g font-family="'DM Sans', 'Segoe UI', Arial, sans-serif">
+    <text x="94" y="161" fill="#91ADFF"
+          font-size="17" font-weight="500" letter-spacing="2.5">INOVAÇÕES</text>
+    <text id="healthlife-name" x="88" y="284" fill="#EDF3FF"
+          font-size="112" font-weight="600" letter-spacing="-6">HEALTHLIFE</text>
+    <text x="94" y="340" fill="#D1DDF4"
+          font-size="34" font-weight="500" letter-spacing="-0.6">JOVENS INOVADORES</text>
+    <text x="94" y="417" fill="#A6B5CE"
+          font-size="25" font-weight="400">Desafio Sicredi · 2024</text>
+  </g>
+
+  <rect x="94" y="493" width="56" height="3" rx="1.5" fill="#527BFF"/>
+  <path d="M165 494.5H310" stroke="#33445F" stroke-width="1"/>
+
+  <!-- Conexões discretas atrás do coração. -->
+  <g stroke="#354F7A" stroke-width="2"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M808 425H773C766 425 762 421 762 414V384C762 377 766 373 773 373H787"/>
+    <path d="M1040 433H1060C1068 433 1072 437 1072 445V557C1072 565 1068 569 1060 569H1005"/>
+  </g>
+  <g fill="#101827" stroke="#6B91F4" stroke-width="2">
+    <circle cx="793" cy="373" r="6"/>
+    <circle cx="999" cy="569" r="6"/>
+  </g>
+
+  <!-- Coração vetorial original. -->
+  <path d="M922 564
+           C894 538 798 472 798 420
+           C798 388 822 365 853 365
+           C883 365 906 381 922 403
+           C938 381 961 365 991 365
+           C1022 365 1046 388 1046 420
+           C1046 472 950 538 922 564Z"
+        fill="url(#healthlife-heart)"
+        stroke="#84A4EE" stroke-width="2.5"
+        stroke-linejoin="round"/>
+
+  <!-- Pulso estilizado: elemento ilustrativo. -->
+  <path d="M824 444H858L878 416L902 487L929 408L951 444H1020"
+        stroke="#B9CBFF" stroke-width="3.5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g font-family="'DM Sans', 'Segoe UI', Arial, sans-serif"
+     font-size="16" fill="#8497B7" letter-spacing="1.4">
+    <text x="94" y="645">SAÚDE</text>
+    <text x="470" y="645">TECNOLOGIA</text>
+    <text x="938" y="645">INOVAÇÃO</text>
+  </g>
+  <g stroke="#425B83" stroke-width="1.5" stroke-linecap="round">
+    <path d="M321 638H371"/>
+    <path d="M803 638H853"/>
+  </g>
+</svg>
+
