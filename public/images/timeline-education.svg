@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">GTI — FATEC Jahu</title>
+  <desc id="description">Ilustração original de um livro aberto e um capelo, com conexões discretas em azul. Gestão da Tecnologia da Informação, FATEC Jahu. Não representa um logotipo, certificado ou conclusão de curso.</desc>
+
+  <defs>
+    <linearGradient id="page-left" x1="665" y1="320" x2="840" y2="531" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#223658" />
+      <stop offset="1" stop-color="#16243D" />
+    </linearGradient>
+    <linearGradient id="page-right" x1="840" y1="320" x2="1015" y2="531" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1B2C49" />
+      <stop offset="1" stop-color="#172640" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="760" fill="#101827" />
+
+  <!-- Quiet structural marks; no external assets or institutional symbols. -->
+  <g stroke="#25334A" stroke-width="1">
+    <path d="M64 112V64H112" />
+    <path d="M1088 64H1136V112" />
+    <path d="M64 648V696H112" />
+    <path d="M1088 696H1136V648" />
+    <path d="M94 598H1106" />
+  </g>
+
+  <g font-family="'DM Sans', 'Segoe UI', Arial, sans-serif">
+    <text x="94" y="161" fill="#91ADFF" font-size="17" font-weight="500" letter-spacing="2.5">FORMAÇÃO EM TECNOLOGIA</text>
+    <text x="88" y="284" fill="#EDF3FF" font-size="112" font-weight="600" letter-spacing="-6">GTI</text>
+    <text x="94" y="347" fill="#D1DDF4" font-size="34" font-weight="500" letter-spacing="-0.6">FATEC Jahu</text>
+    <text x="94" y="417" fill="#A6B5CE" font-size="25" font-weight="400">Gestão da Tecnologia</text>
+    <text x="94" y="454" fill="#A6B5CE" font-size="25" font-weight="400">da Informação</text>
+  </g>
+
+  <rect x="94" y="493" width="56" height="3" rx="1.5" fill="#527BFF" />
+  <path d="M165 494.5H310" stroke="#33445F" stroke-width="1" />
+
+  <!-- Connections sit behind the book and remain secondary to its silhouette. -->
+  <g stroke="#354F7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M671 407H618C611 407 607 403 607 396V247C607 240 611 236 618 236H659" />
+    <path d="M1010 406H1053C1060 406 1064 410 1064 417V542C1064 549 1060 553 1053 553H1007" />
+    <path d="M946 205H1053C1060 205 1064 201 1064 194V162" />
+  </g>
+  <g fill="#101827" stroke="#6B91F4" stroke-width="2">
+    <circle cx="665" cy="236" r="6" />
+    <circle cx="1001" cy="553" r="6" />
+    <rect x="1058" y="150" width="12" height="12" rx="3" />
+  </g>
+
+  <!-- Book cover and the two pages are deliberately simple, readable shapes. -->
+  <path d="M654 334C717 308 783 309 840 342C897 309 963 308 1026 334V529C962 507 899 510 840 548C781 510 718 507 654 529V334Z" fill="#111D32" stroke="#3D5D95" stroke-width="2" stroke-linejoin="round" />
+  <path d="M666 314C728 290 785 295 840 328V533C785 498 728 495 666 518V314Z" fill="url(#page-left)" stroke="#84A4EE" stroke-width="2.5" stroke-linejoin="round" />
+  <path d="M840 328C895 295 952 290 1014 314V518C952 495 895 498 840 533V328Z" fill="url(#page-right)" stroke="#84A4EE" stroke-width="2.5" stroke-linejoin="round" />
+  <path d="M840 330V532" stroke="#527BFF" stroke-width="4" />
+
+  <g stroke="#607FAE" stroke-width="2" stroke-linecap="round">
+    <path d="M697 352C732 342 766 345 804 361" />
+    <path d="M697 376C732 366 766 369 804 385" />
+    <path d="M697 400C732 390 766 393 804 409" />
+    <path d="M697 448C729 439 758 441 788 451" />
+    <path d="M697 472C727 464 755 465 780 473" />
+    <path d="M876 429C914 413 948 410 983 420" />
+    <path d="M876 453C914 437 948 434 983 444" />
+    <path d="M876 477C909 463 939 459 966 464" />
+  </g>
+
+  <!-- A small code motif connects education with software development. -->
+  <g stroke="#A2BAFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M899 350L885 364L899 378" />
+    <path d="M954 350L968 364L954 378" />
+    <path d="M935 345L920 385" stroke="#527BFF" />
+  </g>
+
+  <!-- Generic capelo: original geometry, not an institutional mark. -->
+  <path d="M785 230V263C802 279 821 287 840 287C859 287 878 279 895 263V230L840 251L785 230Z" fill="#233E78" stroke="#789AF2" stroke-width="2.5" stroke-linejoin="round" />
+  <path d="M738 207L840 163L942 207L840 251L738 207Z" fill="#527BFF" stroke="#9BB5FF" stroke-width="2.5" stroke-linejoin="round" />
+  <path d="M840 207H940V267" stroke="#C2D2FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="840" cy="207" r="4" fill="#DBE5FF" />
+  <path d="M936 272H944L947 288H933L936 272Z" fill="#A7BFFF" />
+
+  <g font-family="'DM Sans', 'Segoe UI', Arial, sans-serif" font-size="16" fill="#8497B7" letter-spacing="1.4">
+    <text x="94" y="645">TECNOLOGIA</text>
+    <text x="470" y="645">CONHECIMENTO</text>
+    <text x="938" y="645">CONEXÕES</text>
+  </g>
+  <g stroke="#425B83" stroke-width="1.5" stroke-linecap="round">
+    <path d="M321 638H371" />
+    <path d="M803 638H853" />
+  </g>
+</svg>
